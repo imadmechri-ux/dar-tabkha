@@ -58,8 +58,10 @@ export function PantryPanel({ pantry, onChange }: Props) {
       setCandidates(found);
       setPicked(new Set(found.filter((f) => f.score >= 0.08).map((f) => f.id)));
       if (found.length === 0) setError('Rien de reconnu. Essaie une photo plus proche, mieux éclairée, ou ajoute les ingrédients à la main.');
-    } catch {
-      setError('La reconnaissance n’a pas pu démarrer (connexion au premier chargement, ou navigateur trop ancien). Tu peux saisir les ingrédients à la main.');
+    } catch (e) {
+      console.error('Reconnaissance photo :', e);
+      const detail = e instanceof Error ? e.message : String(e);
+      setError(`La reconnaissance n’a pas pu démarrer (${detail.slice(0, 160)}). Tu peux saisir les ingrédients à la main.`);
     } finally {
       setBusy(false);
     }
