@@ -7,6 +7,7 @@ export interface Detection {
 }
 
 const MODEL = 'Xenova/clip-vit-base-patch32';
+const TRANSFORMERS_URL = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2/dist/transformers.web.min.js';
 let classifierPromise: Promise<unknown> | null = null;
 
 /**
@@ -16,7 +17,8 @@ let classifierPromise: Promise<unknown> | null = null;
  */
 function getClassifier() {
   if (!classifierPromise) {
-    classifierPromise = import('@huggingface/transformers').then(({ pipeline }) =>
+    // Librairie chargée depuis un CDN à version figée : elle ne fait pas partie du bundle du dépôt.
+    classifierPromise = import(/* @vite-ignore */ TRANSFORMERS_URL).then(({ pipeline }) =>
       pipeline('zero-shot-image-classification', MODEL),
     );
   }
