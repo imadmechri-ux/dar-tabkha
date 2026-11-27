@@ -63,6 +63,12 @@ export const INGREDIENTS: IngredientDef[] = [
   { id: 'tofu', name: 'Tofu', synonyms: ['tofu'], category: 'autre' },
   { id: 'lentilles-corail', name: 'Lentilles corail', synonyms: ['lenticchie rosse'], category: 'feculent' },
   { id: 'bouillon', name: 'Bouillon', synonyms: ['brodo', 'mrak', 'fond'], category: 'condiment' },
+  { id: 'frik', name: 'Frik (blé vert concassé)', synonyms: ['freekeh', 'frik', 'blé vert', 'ble vert'], category: 'feculent', containsGluten: true },
+  { id: 'quinoa', name: 'Quinoa', synonyms: ['quinua', 'kinoa'], category: 'feculent' },
+  { id: 'concombre', name: 'Concombre', synonyms: ['cetriolo', 'khiyar', 'cucumber'], category: 'legume' },
+  { id: 'yaourt', name: 'Yaourt nature', synonyms: ['yogurt', 'yaourt', 'yoghourt', 'laben', 'lben'], category: 'laitier', containsAnimal: true, containsLactose: true, allergens: ['lait'], priceHint: 8 },
+  { id: 'anchois', name: 'Anchois', synonyms: ['acciughe', 'anchois', 'anchovy'], category: 'poisson', containsAnimal: true, allergens: ['poisson'], priceHint: 40 },
+  { id: 'levure', name: 'Levure boulangère', synonyms: ['lievito', 'khmira', 'levure', 'yeast'], category: 'autre' },
 ];
 
 export const INGREDIENT_BY_ID: Record<string, IngredientDef> = Object.fromEntries(

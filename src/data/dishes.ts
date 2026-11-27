@@ -1,3 +1,4 @@
+import { EXTRA_DISHES } from './dishes-extra';
 import type { Dish, DietTag, SportRole } from '../types';
 
 // Base de plats du MVP. Quantités par personne adulte.
@@ -10,7 +11,7 @@ function dish(p: Omit<Dish, 'verified' | 'reheatable'> & { reheatable?: boolean 
   return { verified: false, reheatable: false, ...p };
 }
 
-export const DISHES: Dish[] = [
+const BASE_DISHES: Dish[] = [
   // ───────────── Tunisien ─────────────
   dish({
     id: 'lablabi', name: 'Lablabi', cuisine: 'tunisien', mealTypes: ['dejeuner'], timeMinutes: 25, spice: 2,
@@ -309,6 +310,8 @@ export const DISHES: Dish[] = [
     diet: ['vegetarien', 'vegan', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['recuperation', 'leger'], reheatable: true,
   }),
 ];
+
+export const DISHES: Dish[] = [...BASE_DISHES, ...EXTRA_DISHES];
 
 export const DISH_BY_ID: Record<string, Dish> = Object.fromEntries(DISHES.map((d) => [d.id, d]));
 
