@@ -1,0 +1,10 @@
+{
+  "name": "Dar Tabkha",
+  "short_name": "Dar Tabkha",
+  "description": "Idées de repas tuniso-italiens selon ton frigo et ton foyer",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf6ef",
+  "theme_color": "#b5442c",
+  "lang": "fr"
+}
