@@ -154,3 +154,12 @@ summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .details ul, .details ol { padding-left: 20px; margin: 6px 0; }
 .details li.have { color: var(--ok); }
 footer { text-align: center; margin: 24px 0 8px; }
+
+.dish-photo { margin: -16px -16px 12px; }
+.dish-photo img { width: 100%; max-height: 240px; object-fit: cover; display: block; border-radius: var(--radius) var(--radius) 0 0; }
+.dish-photo figcaption { padding: 6px 16px 0; }
+.dish-photo a { color: var(--accent); }
+.intro { margin: 8px 0; }
+ol.steps { padding-left: 22px; }
+ol.steps li { margin-bottom: 12px; }
+ol.steps p { margin: 4px 0 0; }

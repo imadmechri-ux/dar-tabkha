@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { INGREDIENT_BY_ID } from '../data/ingredients';
 import { shoppingList, type Suggestion } from '../engine/suggest';
 import type { Guests } from '../engine/scale';
+import { RECIPES } from '../data/recipes';
+import { PHOTOS } from '../data/photos';
 
 const UNIT_LABELS: Record<string, string> = { g: 'g', ml: 'ml', piece: '', cs: 'c. à soupe', cc: 'c. à café', pincee: 'pincée' };
 const CUISINE_LABELS: Record<string, string> = { tunisien: 'Tunisien', italien: 'Italien', fusion: 'Fusion tuniso-italienne' };
@@ -18,9 +20,19 @@ export function DishCard({ suggestion: s, guests, pantry }: Props) {
   const list = shoppingList(d, guests, pantry);
   const estimate = list.reduce((sum, l) => sum + (l.estimatedTnd ?? 0), 0);
   const n = d.nutrition;
+  const recipe = RECIPES[d.id];
+  const photo = PHOTOS[d.id];
 
   return (
     <article className="dish card">
+      {photo ? (
+        <figure className="dish-photo">
+          <img src={photo.src} alt={`Photo : ${d.name}`} loading="lazy" />
+          <figcaption className="small muted">
+            Photo : {photo.credit} · <a href={photo.url} target="_blank" rel="noreferrer">source</a> ({photo.license})
+          </figcaption>
+        </figure>
+      ) : null}
       <header onClick={() => setOpen(!open)} role="button" tabIndex={0}>
         <div>
           <h3>{d.name}</h3>
@@ -62,10 +74,44 @@ export function DishCard({ suggestion: s, guests, pantry }: Props) {
             ))}
           </ul>
 
+          {recipe && (
+            <>
+              <p className="intro">{recipe.intro}</p>
+              <p className="small muted">
+                Préparation {recipe.prepMinutes} min · Cuisson {recipe.cookMinutes} min
+              </p>
+              <h4>Matériel</h4>
+              <ul>{recipe.equipment.map((e) => <li key={e}>{e}</li>)}</ul>
+            </>
+          )}
+
           <h4>Préparation</h4>
-          <ol>
-            {d.steps.map((step) => <li key={step}>{step}</li>)}
-          </ol>
+          {recipe ? (
+            <ol className="steps">
+              {recipe.steps.map((step) => (
+                <li key={step.title}>
+                  <strong>{step.title}</strong>
+                  {step.minutes ? <span className="muted small"> · ~{step.minutes} min</span> : null}
+                  <p>{step.text}</p>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <ol>
+              {d.steps.map((step) => <li key={step}>{step}</li>)}
+            </ol>
+          )}
+
+          {recipe && (
+            <>
+              <h4>Conseils</h4>
+              <ul>{recipe.tips.map((t) => <li key={t}>{t}</li>)}</ul>
+              <h4>Service</h4>
+              <p className="small">{recipe.serve}</p>
+              <h4>Conservation</h4>
+              <p className="small">{recipe.storage}</p>
+            </>
+          )}
 
           <h4>Par portion (estimation)</h4>
           <p className="small">{n.kcal} kcal · {n.protein} g protéines · {n.carbs} g glucides · {n.fat} g lipides</p>
