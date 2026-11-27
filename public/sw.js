@@ -1,5 +1,6 @@
-// Service worker minimal : mise en cache de l'application pour un usage hors-ligne.
-const CACHE = 'dar-tabkha-v1';
+// Service worker : pages HTML en réseau d'abord (les mises à jour arrivent tout de suite),
+// fichiers à empreinte (JS/CSS) en cache d'abord, et repli hors-ligne sur le cache.
+const CACHE = 'dar-tabkha-v2';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html', './manifest.webmanifest'])));
@@ -7,16 +8,37 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim()),
+  );
 });
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
+  const req = event.request;
+  if (req.method !== 'GET') return;
+
+  const isPage = req.mode === 'navigate' || req.headers.get('accept')?.includes('text/html');
+  if (isPage) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          caches.open(CACHE).then((c) => c.put(req, res.clone())).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match(req).then((c) => c || caches.match('./index.html'))),
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request).then((res) => {
-      const copy = res.clone();
-      caches.open(CACHE).then((c) => c.put(event.request, copy)).catch(() => {});
-      return res;
-    }).catch(() => caches.match('./index.html')))
+    caches.match(req).then((cached) =>
+      cached ||
+      fetch(req).then((res) => {
+        caches.open(CACHE).then((c) => c.put(req, res.clone())).catch(() => {});
+        return res;
+      }),
+    ),
   );
 });
