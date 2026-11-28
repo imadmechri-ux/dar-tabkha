@@ -163,3 +163,6 @@ footer { text-align: center; margin: 24px 0 8px; }
 ol.steps { padding-left: 22px; }
 ol.steps li { margin-bottom: 12px; }
 ol.steps p { margin: 4px 0 0; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand img { border-radius: 12px; flex-shrink: 0; }
+.brand h1 { margin: 0; }

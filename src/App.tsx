@@ -41,7 +41,10 @@ export default function App() {
   return (
     <main className="app">
       <header className="top">
-        <h1>Dar Tabkha</h1>
+        <div className="brand">
+          <img src="logo.svg" alt="" width="44" height="44" />
+          <h1>Dar Tabkha</h1>
+        </div>
         <p className="muted">Repas tuniso-italiens selon ton frigo et ton foyer</p>
       </header>
 
