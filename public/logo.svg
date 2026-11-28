@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#fbf6ef"/>
+  <!-- assiette -->
+  <ellipse cx="256" cy="340" rx="196" ry="66" fill="#ffffff" stroke="#e6dbd0" stroke-width="6"/>
+  <!-- pâtes en nid -->
+  <g fill="none" stroke="#f2c94c" stroke-width="13" stroke-linecap="round">
+    <path d="M110 330 C140 280 190 290 210 300 C230 310 250 282 280 288 C312 294 330 262 372 300"/>
+    <path d="M124 344 C160 306 214 320 240 326 C262 332 290 304 320 312 C344 318 360 300 388 326"/>
+    <path d="M150 300 C180 258 240 262 262 276 C286 290 318 262 350 282"/>
+    <path d="M140 362 C180 340 230 352 262 356 C296 360 330 344 378 352"/>
+  </g>
+  <!-- tomate -->
+  <circle cx="256" cy="236" r="78" fill="#c8402a"/>
+  <ellipse cx="226" cy="206" rx="22" ry="12" fill="#f5b7a0" opacity="0.7" transform="rotate(-30 226 206)"/>
+  <path d="M256 170 C236 148 210 152 196 166 C222 170 238 178 256 190 C274 178 290 170 316 166 C302 152 276 148 256 170 Z" fill="#4f7a2e"/>
+  <!-- harissa -->
+  <ellipse cx="380" cy="320" rx="38" ry="26" fill="#8f1d14"/>
+  <ellipse cx="370" cy="312" rx="12" ry="6" fill="#c8402a" opacity="0.8"/>
+  <!-- huile d'olive -->
+  <path d="M120 300 C150 304 176 282 196 300 C214 316 236 300 256 312" fill="none" stroke="#b8c24a" stroke-width="11" stroke-linecap="round" opacity="0.95"/>
+  <ellipse cx="300" cy="354" rx="14" ry="6" fill="#b8c24a"/>
+</svg>

@@ -1,0 +1,240 @@
+import type { RecipeDetail } from './types';
+
+export const RECIPES_ITALIEN: Record<string, RecipeDetail> = {
+  'spaghetti-aglio-olio': {
+    intro: 'Aglio, olio e peperoncino : le plat le plus simple de la cuisine italienne. Trois ingrédients, une grande attention au timing, et une sauce qui naît de l’huile et de l’eau des pâtes.',
+    equipment: ['Une grande casserole pour les pâtes', 'Une grande poêle', 'Une passoire', 'Une pince ou une cuillère en bois'],
+    prepMinutes: 5,
+    cookMinutes: 10,
+    steps: [
+      { title: 'Mettre l’eau à chauffer', text: 'Portez 2 litres d’eau à ébullition dans la casserole, avec une cuillère à soupe de gros sel par 100 g de pâtes.', minutes: 6 },
+      { title: 'Préparer l’ail et le piment', text: 'Émincez finement 2 gousses d’ail, en lamelles et non en purée : elles doivent dorer sans brûler. Émiettez le demi-piment, en retirant les graines si vous voulez moins de piquant.', minutes: 2 },
+      { title: 'Cuire les pâtes', text: 'Plongez les spaghettis (90 g) dans l’eau bouillante et cuisez-les 1 minute de moins que le temps indiqué sur le paquet.', minutes: 9 },
+      { title: 'Faire infuser l’huile', text: 'Pendant ce temps, versez 2 cuillères à soupe d’huile d’olive dans la poêle, ajoutez l’ail et le piment, et chauffez à feu doux 2 à 3 minutes. L’ail doit devenir doré pâle, pas brun.', minutes: 3 },
+      { title: 'Lier', text: 'Prélevez une tasse d’eau de cuisson avant d’égoutter. Mettez les pâtes égouttées dans la poêle, ajoutez 3 cuillères d’eau de cuisson et remuez 1 minute à feu moyen : la sauce doit enrober les pâtes sans être liquide.', minutes: 2 },
+      { title: 'Servir', text: 'Ajoutez le persil haché et, si vous le souhaitez, un peu de parmesan râpé. Servez immédiatement.', minutes: 1 },
+    ],
+    tips: [
+      'L’eau de cuisson salée et riche en amidon est la clé de la sauce : n’oubliez pas d’en garder.',
+      'L’ail brûlé devient amer : retirez la poêle du feu dès qu’il est doré.',
+      'Servez dans des assiettes chaudes pour que la sauce reste souple.',
+    ],
+    serve: 'Seul, en plat principal, avec un filet d’huile d’olive crue et du persil.',
+    storage: 'Se mange immédiatement. Réchauffé, il devient sec : ajoutez un peu d’eau et d’huile.',
+  },
+
+  'pasta-pomodoro-basilic': {
+    intro: 'Des pâtes à la tomate fraîche et au basilic : une sauce simple, qui doit son goût à une cuisson lente des tomates et à la fraîcheur des herbes.',
+    equipment: ['Une grande casserole', 'Une poêle ou une sauteuse', 'Une cuillère en bois'],
+    prepMinutes: 10,
+    cookMinutes: 15,
+    steps: [
+      { title: 'Préparer les tomates', text: 'Ébouillantez les tomates (150 g) 30 secondes, pelez-les, retirez les graines et coupez-les en dés.', minutes: 5 },
+      { title: 'Faire revenir', text: 'Dans la poêle, faites fondre l’oignon émincé dans deux cuillères à soupe d’huile d’olive 5 minutes à feu doux. Ajoutez l’ail écrasé et laissez 1 minute.', minutes: 6 },
+      { title: 'Réduire la sauce', text: 'Ajoutez les tomates, une pincée de sel et de poivre. Laissez mijoter à feu doux 15 minutes, sans couvrir, jusqu’à ce que la sauce épaississe.', minutes: 15 },
+      { title: 'Cuire les pâtes', text: 'Pendant la cuisson de la sauce, faites cuire les pâtes (90 g) dans l’eau bouillante salée, en les laissant un peu fermes.', minutes: 10 },
+      { title: 'Lier', text: 'Égouttez les pâtes en gardant un peu d’eau de cuisson. Mettez-les dans la sauce et remuez 1 minute à feu moyen, en ajoutant un peu d’eau si la sauce est trop épaisse.', minutes: 2 },
+      { title: 'Finir au basilic', text: 'Hors du feu, déchirez les feuilles de basilic à la main et ajoutez-les. Servez avec du parmesan si vous le souhaitez.', minutes: 1 },
+    ],
+    tips: [
+      'Les tomates en conserve peuvent remplacer les fraîches hors saison : utilisez alors des tomates pelées et écrasées.',
+      'Le basilic s’ajoute en fin de cuisson, sinon il noircit et perd son parfum.',
+      'Une pincée de sucre corrige l’acidité d’une tomate trop verte.',
+    ],
+    serve: 'Avec du parmesan râpé, un filet d’huile d’olive et des feuilles de basilic.',
+    storage: 'La sauce se garde 3 jours au frais et se congèle très bien.',
+  },
+
+  'pasta-norma': {
+    intro: 'Les pâtes alla Norma viennent de Sicile : l’aubergine frite, la sauce tomate et le basilic sont relevés par la ricotta salée (ou le pecorino) râpée au dernier moment.',
+    equipment: ['Une grande poêle', 'Une casserole', 'Une passoire', 'Une râpe'],
+    prepMinutes: 15,
+    cookMinutes: 25,
+    steps: [
+      { title: 'Préparer l’aubergine', text: 'Coupez la demi-aubergine en cubes de 2 cm. Salez-les et laissez-les dégorger 10 minutes dans une passoire, puis épongez-les.', minutes: 12 },
+      { title: 'Faire dorer', text: 'Faites chauffer deux cuillères à soupe d’huile d’olive dans la poêle à feu moyen-vif. Ajoutez les cubes d’aubergine et faites-les dorer 6 à 8 minutes en remuant, jusqu’à ce qu’ils soient tendres et colorés. Réservez.', minutes: 8 },
+      { title: 'Préparer la sauce', text: 'Dans la même poêle, ajoutez une gousse d’ail écrasée 1 minute, puis les tomates en dés (150 g). Salez et laissez mijoter 10 minutes.', minutes: 11 },
+      { title: 'Cuire les pâtes', text: 'Pendant ce temps, faites cuire les pâtes (90 g) dans l’eau bouillante salée, environ 1 minute de moins que le temps indiqué.', minutes: 9 },
+      { title: 'Assembler', text: 'Remettez l’aubergine dans la sauce, ajoutez les pâtes égouttées avec un peu d’eau de cuisson, et remuez 1 minute.', minutes: 2 },
+      { title: 'Finir', text: 'Servez, parsemez de feuilles de basilic déchirées et de pecorino râpé (20 g).', minutes: 1 },
+    ],
+    tips: [
+      'Le dégorgement enlève l’amertume de l’aubergine et réduit la quantité d’huile absorbée.',
+      'Faites dorer l’aubergine en plusieurs fois si la poêle est petite : elle doit griller, pas bouillir.',
+      'Ce plat se prête bien aux restes : il se réchauffe sans difficulté.',
+    ],
+    serve: 'Avec une pincée de piment, du basilic et une généreuse couche de fromage râpé.',
+    storage: 'Se garde 2 jours au frais. Réchauffez doucement avec un peu d’eau.',
+  },
+
+  'pasta-tonno-capperi': {
+    intro: 'Pâtes au thon, aux câpres et au citron : un plat méditerranéen rapide, riche en protéines et très parfumé. Le thon se mélange à l’huile pour rester moelleux.',
+    equipment: ['Une grande casserole', 'Une poêle', 'Une fourchette'],
+    prepMinutes: 5,
+    cookMinutes: 10,
+    steps: [
+      { title: 'Cuire les pâtes', text: 'Faites cuire les pâtes (90 g) dans l’eau bouillante salée jusqu’à ce qu’elles soient al dente, puis égouttez en gardant un peu d’eau.', minutes: 10 },
+      { title: 'Égoutter le thon', text: 'Égouttez bien le thon (80 g) et émiettez-le à la fourchette.', minutes: 2 },
+      { title: 'Préparer le fond', text: 'Dans la poêle, chauffez une cuillère à soupe d’huile d’olive. Ajoutez l’ail écrasé 30 secondes, puis les câpres (une cuillère à soupe, rincées si elles sont salées).', minutes: 2 },
+      { title: 'Ajouter le thon', text: 'Ajoutez le thon émietté et faites-le chauffer 1 à 2 minutes, sans le faire dorer.', minutes: 2 },
+      { title: 'Lier', text: 'Ajoutez les pâtes, deux cuillères d’eau de cuisson, le zeste et le jus du quart de citron. Mélangez 1 minute.', minutes: 1 },
+      { title: 'Servir', text: 'Parsemez de persil haché et servez tout de suite.', minutes: 1 },
+    ],
+    tips: [
+      'Choisissez du thon au naturel ou à l’huile d’olive, bien égoutté : le thon à l’eau donne un plat fade.',
+      'Rincez les câpres salées pour enlever l’excès de sel.',
+      'Le citron s’ajoute hors du feu pour garder son parfum.',
+    ],
+    serve: 'Dans des assiettes chaudes, avec du persil et un filet d’huile d’olive.',
+    storage: 'Se garde 1 jour au frais. Réchauffez avec un peu d’eau de cuisson.',
+  },
+
+  'pasta-e-ceci': {
+    intro: 'Pasta e ceci : une soupe de pâtes et de pois chiches typique du sud de l’Italie. Les pâtes sont courtes et la texture doit être crémeuse, pas sèche.',
+    equipment: ['Une casserole à fond épais', 'Une cuillère en bois', 'Un mixeur (facultatif)'],
+    prepMinutes: 10,
+    cookMinutes: 25,
+    steps: [
+      { title: 'Faire revenir', text: 'Dans la casserole, faites revenir l’oignon émincé dans l’huile d’olive 5 minutes à feu doux. Ajoutez l’ail et le piment si vous en mettez, et laissez 1 minute.', minutes: 6 },
+      { title: 'Ajouter les pois chiches', text: 'Ajoutez les pois chiches (80 g, égouttés) et écrasez environ un tiers d’entre eux avec le dos d’une cuillère, pour épaissir la soupe.', minutes: 3 },
+      { title: 'Mouiller', text: 'Versez 300 ml de bouillon chaud et laissez mijoter 10 minutes.', minutes: 10 },
+      { title: 'Cuire les pâtes', text: 'Ajoutez les pâtes courtes (70 g) et cuisez 8 à 10 minutes, en remuant souvent pour qu’elles ne collent pas au fond. Ajoutez un peu d’eau si la soupe épaissit trop.', minutes: 10 },
+      { title: 'Finir', text: 'Rectifiez l’assaisonnement, ajoutez un filet d’huile d’olive crue et laissez reposer 2 minutes avant de servir.', minutes: 2 },
+    ],
+    tips: [
+      'La soupe doit être onctueuse : elle épaissit en refroidissant, ajoutez un peu d’eau au réchauffage.',
+      'Une pincée de romarin ou de sauge apporte un goût plus typiquement italien.',
+      'Les pâtes peuvent être cuites à part si vous voulez une soupe plus claire.',
+    ],
+    serve: 'Très chaud, avec un filet d’huile d’olive et du poivre noir fraîchement moulu.',
+    storage: 'Se garde 3 jours au frais. Les pâtes absorbent le liquide : réchauffez avec de l’eau.',
+  },
+
+  caponata: {
+    intro: 'La caponata est un plat sicilien à base d’aubergines, de tomates, d’olives et de câpres, relevé d’une pointe de sucre et de vinaigre. Elle se prépare à l’avance, et son goût s’améliore en reposant.',
+    equipment: ['Une grande sauteuse', 'Un couteau', 'Un plat creux pour le repos'],
+    prepMinutes: 15,
+    cookMinutes: 25,
+    steps: [
+      { title: 'Préparer les légumes', text: 'Coupez l’aubergine et la courgette en cubes de 2 cm. Émincez l’oignon. Coupez les tomates (120 g) en dés.', minutes: 8 },
+      { title: 'Faire dorer', text: 'Dans l’huile d’olive, faites dorer l’aubergine 8 minutes à feu moyen-vif, puis ajoutez la courgette 3 minutes. Réservez.', minutes: 11 },
+      { title: 'Faire confire l’oignon', text: 'Dans la même sauteuse, faites confire l’oignon 5 minutes à feu doux, jusqu’à ce qu’il soit tendre et doré.', minutes: 5 },
+      { title: 'Ajouter les tomates', text: 'Ajoutez les tomates et laissez réduire 5 minutes. Remettez les légumes, les câpres (une cuillère à soupe) et dix olives coupées.', minutes: 5 },
+      { title: 'Relever', text: 'Ajoutez une cuillère de vinaigre et une cuillère à café de miel. Mélangez, laissez cuire 2 minutes pour que le sucre et le vinaigre se fondent.', minutes: 2 },
+      { title: 'Reposer', text: 'Laissez tiédir, puis conservez au frais au moins 1 heure. Servez tiède ou froid.', minutes: 60 },
+    ],
+    tips: [
+      'Le goût agrodolce (aigre-doux) est l’équilibre clé : goûtez et ajustez le vinaigre ou le miel.',
+      'Faites dorer les aubergines séparément : entassées, elles bouillent et deviennent molles.',
+      'Très bonne le lendemain.',
+    ],
+    serve: 'En entrée, avec du pain grillé, ou en accompagnement de viande ou de poisson.',
+    storage: 'Se conserve 4 jours au réfrigérateur, dans un contenant fermé.',
+  },
+
+  'frittata-epinards': {
+    intro: 'La frittata est une omelette italienne épaisse, cuite à feu doux et finie au gril. Les épinards et le parmesan lui donnent du goût et de la tenue.',
+    equipment: ['Une poêle antiadhésive allant au four ou au gril', 'Un bol', 'Un fouet'],
+    prepMinutes: 5,
+    cookMinutes: 15,
+    steps: [
+      { title: 'Faire tomber les épinards', text: 'Dans la poêle, faites chauffer une cuillère à soupe d’huile d’olive avec l’ail écrasé. Ajoutez les épinards (100 g) et laissez-les tomber 2 à 3 minutes. Égouttez l’excès d’eau.', minutes: 4 },
+      { title: 'Battre les œufs', text: 'Dans un bol, battez les œufs (2) avec le parmesan râpé (15 g), une pincée de sel et de poivre.', minutes: 2 },
+      { title: 'Verser', text: 'Répartissez les épinards dans la poêle et versez les œufs battus dessus. Laissez cuire à feu doux 5 à 6 minutes, sans remuer, jusqu’à ce que le fond soit pris.', minutes: 6 },
+      { title: 'Finir', text: 'Passez la frittata sous le gril du four 2 à 3 minutes, jusqu’à ce que le dessus soit doré et ferme. Surveillez-la : le manche de la poêle ne doit pas être en plastique.', minutes: 3 },
+      { title: 'Démouler', text: 'Laissez tiédir 2 minutes, puis glissez la frittata sur une assiette ou coupez-la directement dans la poêle.', minutes: 2 },
+    ],
+    tips: [
+      'Un feu trop vif brûle le fond avant que le centre soit pris.',
+      'Égouttez bien les épinards cuits, sinon la frittata reste liquide au centre.',
+      'Ajoutez une pincée de muscade pour un goût plus rond.',
+    ],
+    serve: 'Tiède ou froide, avec une salade verte et du pain.',
+    storage: 'Se garde 2 jours au frais. Se mange très bien froide, le lendemain.',
+  },
+
+  'pollo-cacciatora': {
+    intro: 'Le poulet « à la chasseuse » (cacciatora) est un plat toscan mijoté avec tomates, poivron et herbes. La viande devient tendre et la sauce se lie à la cuisson.',
+    equipment: ['Une cocotte ou une sauteuse avec couvercle', 'Un couteau', 'Une cuillère en bois'],
+    prepMinutes: 15,
+    cookMinutes: 35,
+    steps: [
+      { title: 'Préparer le poulet', text: 'Coupez le poulet (150 g de viande par personne) en morceaux de taille égale. Salez et poivrez-les.', minutes: 5 },
+      { title: 'Dorer', text: 'Dans la cocotte, chauffez deux cuillères à soupe d’huile d’olive à feu moyen-vif. Dorez le poulet 4 à 5 minutes par face, par petites quantités pour ne pas le faire bouillir. Réservez.', minutes: 10 },
+      { title: 'Faire revenir les légumes', text: 'Dans la même cocotte, faites revenir l’oignon émincé et le demi-poivron en lanières 5 minutes. Ajoutez l’ail écrasé 1 minute.', minutes: 6 },
+      { title: 'Ajouter la sauce', text: 'Ajoutez les tomates (150 g) en dés, le basilic et une pincée d’origan. Remettez le poulet avec son jus.', minutes: 2 },
+      { title: 'Mijoter', text: 'Couvrez et laissez mijoter à feu doux 30 minutes, en retournant la viande une fois. Si la sauce réduit trop, ajoutez un peu d’eau.', minutes: 30 },
+      { title: 'Vérifier et servir', text: 'Vérifiez que la viande est bien cuite (le jus doit être clair), rectifiez le sel et servez avec la sauce.', minutes: 2 },
+    ],
+    tips: [
+      'Dorez le poulet sans le remuer pour qu’il prenne couleur : c’est ce qui donne du goût à la sauce.',
+      'Les cuisses avec os restent plus juteuses que les blancs.',
+      'Pour un plat plus complet, ajoutez des pommes de terre coupées en quartiers avec les tomates.',
+    ],
+    serve: 'Avec de la polenta, des pâtes larges ou du pain pour saucer.',
+    storage: 'Se garde 3 jours au frais. Réchauffez à feu doux avec un peu d’eau.',
+  },
+
+  'risotto-simple': {
+    intro: 'Le risotto est un riz cuit lentement, en ajoutant le bouillon petit à petit, qui rend le grain crémeux. Ici, une version simple au parmesan, avec du riz rond.',
+    equipment: ['Une casserole large à fond épais', 'Une louche', 'Une cuillère en bois'],
+    prepMinutes: 5,
+    cookMinutes: 25,
+    steps: [
+      { title: 'Chauffer le bouillon', text: 'Faites chauffer le bouillon (300 ml) dans une casserole à côté, à feu très doux. Il doit rester chaud pendant toute la cuisson.', minutes: 5 },
+      { title: 'Faire revenir', text: 'Dans une casserole, faites fondre la moitié du beurre (5 g) avec deux cuillères d’huile d’olive. Ajoutez l’oignon très finement haché et laissez-le transparaître 4 minutes.', minutes: 5 },
+      { title: 'Nacrer le riz', text: 'Ajoutez le riz (80 g) et remuez 2 minutes, jusqu’à ce que les grains deviennent translucides sur les bords. C’est l’étape « nacrer ».', minutes: 2 },
+      { title: 'Ajouter le bouillon', text: 'Versez une louche de bouillon et remuez jusqu’à absorption. Continuez louche par louche, en attendant que le riz absorbe avant d’ajouter la suivante, pendant 16 à 18 minutes.', minutes: 18 },
+      { title: 'Tester la cuisson', text: 'Goûtez : le riz doit être tendre mais légèrement ferme au centre (al dente). Arrêtez le bouillon quand il est cuit.', minutes: 1 },
+      { title: 'Monter au beurre', text: 'Hors du feu, ajoutez le reste du beurre et le parmesan râpé (20 g). Couvrez 1 minute, puis remuez énergiquement pour lier la sauce. Le risotto doit couler lentement dans l’assiette.', minutes: 2 },
+    ],
+    tips: [
+      'Le riz rond (arborio, carnaroli) est indispensable pour la texture : le riz long ne se lie pas.',
+      'Ne lavez pas le riz, l’amidon sert à la crème.',
+      'Le risotto ne se réchauffe pas bien : préparez-le au moment de servir.',
+    ],
+    serve: 'Dans des assiettes creuses et chaudes, avec du parmesan râpé en plus.',
+    storage: 'À manger immédiatement. Il se fige en refroidissant.',
+  },
+
+  carbonara: {
+    intro: 'La carbonara romaine repose sur trois ingrédients : des pâtes, des œufs et un fromage, auxquels on ajoute du porc fumé (guanciale ou lardons). Le secret est de lier la sauce hors du feu pour éviter les œufs brouillés.',
+    equipment: ['Une grande casserole', 'Une poêle', 'Un bol'],
+    prepMinutes: 5,
+    cookMinutes: 15,
+    steps: [
+      { title: 'Cuire les pâtes', text: 'Faites cuire les pâtes (90 g) dans l’eau bouillante salée. Gardez une demi-tasse d’eau de cuisson avant d’égoutter.', minutes: 10 },
+      { title: 'Faire croustiller la garniture', text: 'Pendant ce temps, faites revenir les lardons (50 g) à sec dans une poêle à feu moyen, 4 à 5 minutes, jusqu’à ce qu’ils soient dorés et croustillants. Retirez-les de la poêle.', minutes: 5 },
+      { title: 'Préparer la liaison', text: 'Dans le bol, battez l’œuf (1) avec le parmesan râpé (20 g) et une bonne quantité de poivre noir moulu. Ajoutez deux cuillères d’eau de cuisson pour fluidifier.', minutes: 2 },
+      { title: 'Hors du feu', text: 'Mettez les pâtes égouttées dans la poêle des lardons, retirée du feu. Versez le mélange œuf-fromage et remuez vivement pendant 30 secondes : la chaleur des pâtes cuit l’œuf, sans le brouiller.', minutes: 1 },
+      { title: 'Servir', text: 'Ajoutez un peu d’eau de cuisson si la sauce est trop épaisse. Servez immédiatement, avec du parmesan et du poivre.', minutes: 1 },
+    ],
+    tips: [
+      'La poêle ne doit pas être sur le feu au moment de lier, sinon l’œuf cuit en omelette.',
+      'Le guanciale est le vrai choix ; les lardons conviennent, mais ne contiennent pas le même goût.',
+      'Pour une version sans porc, remplacez les lardons par des champignons poêlés, et sachez que ce n’est plus une carbonara.',
+    ],
+    serve: 'Avec du parmesan râpé et beaucoup de poivre noir.',
+    storage: 'Se mange immédiatement. Elle ne se conserve pas bien.',
+  },
+
+  'pasta-pesto-courgette': {
+    intro: 'Des pâtes au pesto de basilic, avec des courgettes sautées. Le pesto est fait maison en quelques minutes, dans un mixeur ou un mortier.',
+    equipment: ['Un mixeur ou un mortier', 'Une poêle', 'Une grande casserole'],
+    prepMinutes: 10,
+    cookMinutes: 10,
+    steps: [
+      { title: 'Préparer le pesto', text: 'Mixez le basilic (10 feuilles), l’ail (1 gousse), le parmesan (15 g), une pincée de sel et deux cuillères à soupe d’huile d’olive jusqu’à obtenir une pâte lisse. Ajoutez un peu d’huile si elle est trop épaisse.', minutes: 4 },
+      { title: 'Cuire les pâtes', text: 'Faites cuire les pâtes (90 g) dans l’eau bouillante salée. Réservez un peu d’eau de cuisson avant d’égoutter.', minutes: 10 },
+      { title: 'Sauter les courgettes', text: 'Coupez la demi-courgette en fines lanières et faites-la sauter 3 à 4 minutes dans une cuillère d’huile d’olive, à feu vif, jusqu’à ce qu’elle soit dorée sur les bords.', minutes: 4 },
+      { title: 'Mélanger', text: 'Hors du feu, ajoutez les pâtes, le pesto et deux cuillères d’eau de cuisson. Mélangez pour bien enrober.', minutes: 1 },
+    ],
+    tips: [
+      'Le pesto oxyde et noircit : couvrez-le d’un filet d’huile s’il attend.',
+      'Les pignons ou amandes peuvent remplacer une partie du parmesan pour une texture plus riche.',
+      'Ne cuisez pas le basilic : il s’ajoute au pesto cru.',
+    ],
+    serve: 'Avec du parmesan râpé et quelques feuilles de basilic.',
+    storage: 'Le pesto se garde 5 jours au frais sous une couche d’huile. Les pâtes se mangent tout de suite.',
+  },
+};
