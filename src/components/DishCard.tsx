@@ -4,6 +4,7 @@ import { shoppingList, type Suggestion } from '../engine/suggest';
 import type { Guests } from '../engine/scale';
 import { RECIPES } from '../data/recipes';
 import { PHOTOS } from '../data/photos';
+import { PRESENTATION } from '../data/presentation';
 
 const UNIT_LABELS: Record<string, string> = { g: 'g', ml: 'ml', piece: '', cs: 'c. à soupe', cc: 'c. à café', pincee: 'pincée' };
 const CUISINE_LABELS: Record<string, string> = { tunisien: 'Tunisien', italien: 'Italien', fusion: 'Fusion tuniso-italienne', international: 'Autre cuisine' };
@@ -22,6 +23,7 @@ export function DishCard({ suggestion: s, guests, pantry }: Props) {
   const n = d.nutrition;
   const recipe = RECIPES[d.id];
   const photo = PHOTOS[d.id];
+  const presentation = PRESENTATION[d.id];
 
   return (
     <article className="dish card">
@@ -100,6 +102,13 @@ export function DishCard({ suggestion: s, guests, pantry }: Props) {
             <ol>
               {d.steps.map((step) => <li key={step}>{step}</li>)}
             </ol>
+          )}
+
+          {presentation && (
+            <>
+              <h4>Dressage</h4>
+              <ul>{presentation.map((t) => <li key={t}>{t}</li>)}</ul>
+            </>
           )}
 
           {recipe && (

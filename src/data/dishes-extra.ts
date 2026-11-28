@@ -372,3 +372,62 @@ export const EXTRA_DISHES_3: Dish[] = [
     diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
   }),
 ];
+
+// ───────────── Petits-déjeuners « esthétiques » ─────────────
+export const EXTRA_DISHES_4: Dish[] = [
+  dish({
+    id: 'labneh-zaatar', name: 'Labneh au za’atar et huile d’olive', cuisine: 'international', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 5, spice: 0,
+    steps: ['Étaler la labneh au centre d’une assiette.', 'Creuser un puits, verser l’huile d’olive.', 'Saupoudrer de za’atar et servir avec du pain.'],
+    ingredients: [
+      { ingredient: 'labneh', qty: 100, unit: 'g' }, { ingredient: 'zaatar', qty: 1, unit: 'cc' },
+      { ingredient: 'huile-olive', qty: 1, unit: 'cs' }, { ingredient: 'pain', qty: 60, unit: 'g' },
+      { ingredient: 'concombre', qty: 0.5, unit: 'piece', optional: true },
+    ],
+    nutrition: { kcal: 420, protein: 16, carbs: 40, fat: 22 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'parfait-fraises-granola', name: 'Parfait yaourt, fraises et granola maison', cuisine: 'international', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 10, spice: 0,
+    steps: ['Griller les flocons d’avoine et les amandes au four.', 'Couper les fraises et les myrtilles.', 'Monter le parfait en couches : yaourt, fruits, granola, miel.'],
+    ingredients: [
+      { ingredient: 'yaourt', qty: 150, unit: 'g' }, { ingredient: 'flocons-avoine', qty: 30, unit: 'g' },
+      { ingredient: 'amande', qty: 10, unit: 'g' }, { ingredient: 'fraise', qty: 80, unit: 'g' },
+      { ingredient: 'myrtille', qty: 40, unit: 'g' }, { ingredient: 'miel', qty: 1, unit: 'cc' },
+    ],
+    nutrition: { kcal: 380, protein: 16, carbs: 52, fat: 12 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'tartine-ricotta-figues', name: 'Tartine ricotta, figues et miel', cuisine: 'international', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 8, spice: 0,
+    steps: ['Griller le pain.', 'Étaler la ricotta généreusement.', 'Disposer les figues coupées en quartiers, arroser de miel.'],
+    ingredients: [
+      { ingredient: 'pain', qty: 60, unit: 'g' }, { ingredient: 'ricotta', qty: 40, unit: 'g' },
+      { ingredient: 'figue', qty: 2, unit: 'piece' }, { ingredient: 'miel', qty: 1, unit: 'cc' },
+    ],
+    nutrition: { kcal: 360, protein: 12, carbs: 50, fat: 12 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'overnight-oats-myrtilles', name: 'Overnight oats aux myrtilles', cuisine: 'international', mealTypes: ['petit-dejeuner'], timeMinutes: 5, spice: 0,
+    steps: ['Mélanger l’avoine, le lait et le yaourt dans un bocal.', 'Fermer et laisser reposer une nuit au frais.', 'Le matin, garnir de myrtilles et de miel.'],
+    ingredients: [
+      { ingredient: 'flocons-avoine', qty: 50, unit: 'g' }, { ingredient: 'lait', qty: 120, unit: 'ml' },
+      { ingredient: 'yaourt', qty: 50, unit: 'g' }, { ingredient: 'myrtille', qty: 40, unit: 'g' },
+      { ingredient: 'miel', qty: 1, unit: 'cc' },
+    ],
+    nutrition: { kcal: 400, protein: 14, carbs: 62, fat: 10 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'assiette-matin-mediterraneenne', name: 'Assiette du matin méditerranéenne', cuisine: 'international', mealTypes: ['petit-dejeuner'], timeMinutes: 12, spice: 0,
+    steps: ['Cuire l’œuf dur 9 minutes.', 'Couper tomate et concombre en dés, les olives en rondelles.', 'Disposer labneh, légumes, œuf et pain, arroser d’huile et de za’atar.'],
+    ingredients: [
+      { ingredient: 'labneh', qty: 60, unit: 'g' }, { ingredient: 'tomate', qty: 80, unit: 'g' },
+      { ingredient: 'concombre', qty: 0.5, unit: 'piece' }, { ingredient: 'olive', qty: 6, unit: 'piece' },
+      { ingredient: 'oeuf', qty: 1, unit: 'piece' }, { ingredient: 'pain', qty: 40, unit: 'g' },
+      { ingredient: 'zaatar', qty: 1, unit: 'cc' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 430, protein: 18, carbs: 36, fat: 24 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['recuperation'],
+  }),
+];

@@ -72,6 +72,11 @@ export const INGREDIENTS: IngredientDef[] = [
   { id: 'datte', name: 'Dattes', synonyms: ['tmar', 'dattes', 'date', 'dates'], category: 'fruit' },
   { id: 'chou', name: 'Chou vert', synonyms: ['cavolo', 'kromb', 'chou', 'cabbage'], category: 'legume' },
   { id: 'chia', name: 'Graines de chia', synonyms: ['chia', 'semi di chia'], category: 'autre' },
+  { id: 'labneh', name: 'Labneh', synonyms: ['labné', 'labneh', 'lebnah', 'yaourt égoutté'], category: 'laitier', containsAnimal: true, containsLactose: true, allergens: ['lait'], priceHint: 30 },
+  { id: 'zaatar', name: "Za'atar", synonyms: ['zaatar', "za'atar", 'zaater', 'thym sumac'], category: 'epice', priceHint: 25 },
+  { id: 'figue', name: 'Figues fraîches', synonyms: ['fichi', 'figue', 'figues', 'fig', 'karmous'], category: 'fruit' },
+  { id: 'fraise', name: 'Fraises', synonyms: ['fragole', 'fraise', 'strawberry', 'fraises'], category: 'fruit' },
+  { id: 'myrtille', name: 'Myrtilles', synonyms: ['mirtilli', 'myrtille', 'blueberry', 'myrtilles'], category: 'fruit' },
 ];
 
 export const INGREDIENT_BY_ID: Record<string, IngredientDef> = Object.fromEntries(
