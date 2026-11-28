@@ -7,6 +7,7 @@ import { suggestDishes } from './engine/suggest';
 import type { Guests } from './engine/scale';
 import { loadState, saveState, type AppState } from './profiles/store';
 import type { MealType } from './types';
+import { SEASON_LABELS, seasonOf } from './engine/season';
 
 export default function App() {
   const [state, setState] = useState<AppState>(() => loadState());
@@ -38,6 +39,22 @@ export default function App() {
   );
 
   const setPantry = (next: Set<string>) => setState({ ...state, pantry: [...next] });
+
+  const currentSeason = seasonOf();
+  // Recette de saison : le meilleur plat de saison pour ce repas, parmi tous les plats (pas seulement les 6 premiers).
+  const seasonalPick = useMemo(
+    () =>
+      suggestDishes({
+        meal,
+        guests,
+        pantry,
+        profiles: eating.length ? eating : state.household.profiles,
+        maxTimeMinutes: maxTime === '' ? undefined : maxTime,
+        limit: 80,
+        season: currentSeason,
+      }).suggestions.find((x) => x.seasonal),
+    [meal, guests, pantry, eating, maxTime, state.household.profiles, currentSeason],
+  );
 
   return (
     <main className="app">
@@ -116,6 +133,13 @@ export default function App() {
               </div>
             </fieldset>
           </section>
+
+          {seasonalPick && (
+            <>
+              <h2 className="section-title">Recette de saison · {SEASON_LABELS[currentSeason]}</h2>
+              <DishCard suggestion={seasonalPick} guests={guests} pantry={pantry} />
+            </>
+          )}
 
           <h2 className="section-title">Idées pour toi</h2>
           {result.suggestions.length === 0 && (

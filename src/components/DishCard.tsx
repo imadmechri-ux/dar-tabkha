@@ -58,6 +58,9 @@ export function DishCard({ suggestion: s, guests, pantry }: Props) {
         ) : (
           <span className="badge">Manque : {s.missing.map((m) => INGREDIENT_BY_ID[m].name).join(', ')}</span>
         )}
+        {s.seasonal && (
+          <span className="badge ok">🌿 De saison : {s.seasonalIngredients.map((id) => INGREDIENT_BY_ID[id].name).join(', ')}</span>
+        )}
         {s.warnings.map((w) => (
           <span key={w} className="badge warn">{w}</span>
         ))}

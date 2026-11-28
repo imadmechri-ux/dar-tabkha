@@ -431,3 +431,64 @@ export const EXTRA_DISHES_4: Dish[] = [
     diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['recuperation'],
   }),
 ];
+
+// ───────────── Recettes de saison (automne et hiver) ─────────────
+export const EXTRA_DISHES_5: Dish[] = [
+  dish({
+    id: 'veloute-courge-carotte', name: 'Velouté de courge et carotte', cuisine: 'fusion', mealTypes: ['dejeuner', 'diner'], timeMinutes: 35, spice: 0,
+    steps: ['Faire revenir oignon, carotte et ail.', 'Ajouter la courge en cubes, le cumin et le bouillon, cuire 20 minutes.', 'Mixer, rectifier, ajouter un filet d’huile.'],
+    ingredients: [
+      { ingredient: 'courge', qty: 150, unit: 'g' }, { ingredient: 'carotte', qty: 0.5, unit: 'piece' },
+      { ingredient: 'oignon', qty: 0.5, unit: 'piece' }, { ingredient: 'ail', qty: 1, unit: 'piece' },
+      { ingredient: 'cumin', qty: 0.5, unit: 'cc' }, { ingredient: 'bouillon', qty: 350, unit: 'ml' },
+      { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 260, protein: 5, carbs: 36, fat: 10 },
+    diet: ['vegetarien', 'vegan', 'sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['leger', 'recuperation'], reheatable: true,
+  }),
+  dish({
+    id: 'gratin-courge-ricotta', name: 'Gratin de courge et ricotta', cuisine: 'italien', mealTypes: ['diner'], timeMinutes: 50, spice: 0,
+    steps: ['Cuire la courge en tranches au four.', 'Mélanger ricotta, parmesan et ail.', 'Alterner courge et ricotta dans un plat, gratiner 15 minutes.'],
+    ingredients: [
+      { ingredient: 'courge', qty: 150, unit: 'g' }, { ingredient: 'ricotta', qty: 50, unit: 'g' },
+      { ingredient: 'parmesan', qty: 15, unit: 'g' }, { ingredient: 'ail', qty: 1, unit: 'piece' },
+      { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 380, protein: 18, carbs: 26, fat: 22 },
+    diet: ['vegetarien', 'sans-gluten', 'sans-porc', 'halal'], sportRoles: [], reheatable: true,
+  }),
+  dish({
+    id: 'poireaux-pois-chiches', name: 'Poireaux aux pois chiches', cuisine: 'fusion', mealTypes: ['dejeuner', 'diner'], timeMinutes: 30, spice: 1,
+    steps: ['Faire revenir les poireaux émincés dans l’huile.', 'Ajouter les pois chiches, le cumin et la tomate.', 'Mijoter 15 minutes, finir au citron.'],
+    ingredients: [
+      { ingredient: 'poireau', qty: 1, unit: 'piece' }, { ingredient: 'pois-chiche', qty: 80, unit: 'g' },
+      { ingredient: 'tomate', qty: 100, unit: 'g' }, { ingredient: 'cumin', qty: 0.5, unit: 'cc' },
+      { ingredient: 'ail', qty: 1, unit: 'piece' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+      { ingredient: 'citron', qty: 0.25, unit: 'piece' },
+    ],
+    nutrition: { kcal: 340, protein: 14, carbs: 44, fat: 12 },
+    diet: ['vegetarien', 'vegan', 'sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['leger'], reheatable: true,
+  }),
+  dish({
+    id: 'salade-orange-dattes', name: 'Salade d’orange, dattes et cannelle', cuisine: 'tunisien', mealTypes: ['petit-dejeuner', 'gouter', 'dejeuner'], timeMinutes: 10, spice: 0,
+    steps: ['Peler les oranges à vif et les couper en rondelles.', 'Couper les dattes en fines lamelles.', 'Assembler, arroser d’huile, saupoudrer de cannelle.'],
+    ingredients: [
+      { ingredient: 'orange', qty: 2, unit: 'piece' }, { ingredient: 'datte', qty: 40, unit: 'g' },
+      { ingredient: 'cannelle', qty: 0.5, unit: 'cc' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+      { ingredient: 'amande', qty: 10, unit: 'g', optional: true },
+    ],
+    nutrition: { kcal: 260, protein: 3, carbs: 52, fat: 7 },
+    diet: ['vegetarien', 'vegan', 'sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['pre-effort', 'leger'],
+  }),
+  dish({
+    id: 'pates-blettes-ricotta', name: 'Pâtes aux blettes et ricotta', cuisine: 'italien', mealTypes: ['dejeuner', 'diner'], timeMinutes: 25, spice: 1,
+    steps: ['Faire tomber les blettes hachées à la poêle avec l’ail.', 'Cuire les pâtes et mélanger avec les blettes.', 'Ajouter la ricotta et le parmesan hors du feu.'],
+    ingredients: [
+      { ingredient: 'pates', qty: 90, unit: 'g' }, { ingredient: 'blette', qty: 150, unit: 'g' },
+      { ingredient: 'ricotta', qty: 40, unit: 'g' }, { ingredient: 'parmesan', qty: 15, unit: 'g' },
+      { ingredient: 'ail', qty: 1, unit: 'piece' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 520, protein: 18, carbs: 66, fat: 18 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'], reheatable: true,
+  }),
+];

@@ -3,9 +3,11 @@ import { INGREDIENT_BY_ID } from '../data/ingredients';
 import type { Dish, DietTag, MealType, Profile } from '../types';
 import { type Guests, portionsOf, scaleIngredient } from './scale';
 import { mealTargets, proteinFit } from './targets';
+import { BASICS } from './basics';
+import { seasonOf, seasonalIngredientsOf } from './season';
+import type { Season } from '../types';
 
-/** Ingrédients que l'on suppose toujours disponibles. */
-export const BASICS = new Set(['sel', 'poivre', 'huile-olive']);
+export { BASICS } from './basics';
 
 export interface SuggestInput {
   meal: MealType;
@@ -18,6 +20,8 @@ export interface SuggestInput {
   maxTimeMinutes?: number;
   /** Nombre de suggestions à renvoyer. */
   limit?: number;
+  /** Saison de référence (par défaut : la saison actuelle). */
+  season?: Season;
 }
 
 export interface Suggestion {
@@ -30,6 +34,9 @@ export interface Suggestion {
   suitableFor: string[];
   /** Avertissements (épices, aliments peu appréciés, etc.). */
   warnings: string[];
+  /** Le plat utilise au moins un ingrédient de saison. */
+  seasonal: boolean;
+  seasonalIngredients: string[];
   /** Quantités ajustées au nombre de portions. */
   quantities: { ingredient: string; qty: number; unit: string; optional: boolean }[];
 }
@@ -57,7 +64,7 @@ function dietMissing(profile: Profile, dish: Dish): DietTag[] {
 }
 
 export function suggestDishes(input: SuggestInput): SuggestResult {
-  const { meal, guests, pantry, profiles, maxTimeMinutes, limit = 5 } = input;
+  const { meal, guests, pantry, profiles, maxTimeMinutes, limit = 5, season = seasonOf() } = input;
   const suggestions: Suggestion[] = [];
   const excluded: Exclusion[] = [];
 
@@ -112,6 +119,8 @@ export function suggestDishes(input: SuggestInput): SuggestResult {
 
     score -= warnings.length * 5;
     if (dish.verified) score += 5;
+    const seasonalIngredients = seasonalIngredientsOf(dish.id, season);
+    if (seasonalIngredients.length) score += 8;
 
     const quantities = dish.ingredients.map((i) => ({
       ingredient: i.ingredient,
@@ -126,6 +135,8 @@ export function suggestDishes(input: SuggestInput): SuggestResult {
       pantryCoverage: Math.round(pantryCoverage * 100) / 100,
       missing,
       suitableFor: profiles.map((p) => p.name),
+      seasonal: seasonalIngredients.length > 0,
+      seasonalIngredients,
       warnings,
       quantities,
     });

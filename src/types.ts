@@ -10,6 +10,8 @@ export type DietTag =
 export type SportRole = 'pre-effort' | 'post-effort' | 'recuperation' | 'leger';
 export type Goal = 'maintien' | 'perte-de-poids' | 'prise-de-masse' | 'endurance' | 'seche';
 
+export type Season = 'printemps' | 'ete' | 'automne' | 'hiver';
+
 export interface IngredientDef {
   id: string;
   /** Nom affiché (français). */
@@ -26,6 +28,8 @@ export interface IngredientDef {
   allergens?: string[];
   /** Coût indicatif par kg ou par unité, en dinars tunisiens (TND), pour la liste de courses. */
   priceHint?: number;
+  /** Saisons où l'ingrédient est au mieux (Tunisie et Europe du Sud). */
+  seasons?: Season[];
 }
 
 export interface DishIngredient {
