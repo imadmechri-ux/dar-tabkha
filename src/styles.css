@@ -166,3 +166,4 @@ ol.steps p { margin: 4px 0 0; }
 .brand { display: flex; align-items: center; gap: 10px; }
 .brand img { border-radius: 12px; flex-shrink: 0; }
 .brand h1 { margin: 0; }
+.card-check { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 0 0 14px; }

@@ -16,6 +16,7 @@ export default function App() {
   const [maxTime, setMaxTime] = useState<number | ''>('');
   const [eatingIds, setEatingIds] = useState<string[] | null>(null);
   const [tab, setTab] = useState<'repas' | 'frigo' | 'foyer'>('repas');
+  const [showSeasonal, setShowSeasonal] = useState(false);
 
   useEffect(() => saveState(state), [state]);
 
@@ -134,7 +135,12 @@ export default function App() {
             </fieldset>
           </section>
 
-          {seasonalPick && (
+          <label className="check card-check">
+            <input type="checkbox" checked={showSeasonal} onChange={(e) => setShowSeasonal(e.target.checked)} />
+            Afficher une recette de saison
+          </label>
+
+          {showSeasonal && seasonalPick && (
             <>
               <h2 className="section-title">Recette de saison · {SEASON_LABELS[currentSeason]}</h2>
               <DishCard suggestion={seasonalPick} guests={guests} pantry={pantry} />
