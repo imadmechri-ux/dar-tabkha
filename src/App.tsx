@@ -71,8 +71,10 @@ export default function App() {
         <>
           <section className="card">
             <div className="seg">
+              <button className={meal === 'petit-dejeuner' ? 'on' : ''} onClick={() => setMeal('petit-dejeuner')}>Petit-déj</button>
               <button className={meal === 'dejeuner' ? 'on' : ''} onClick={() => setMeal('dejeuner')}>Déjeuner</button>
               <button className={meal === 'diner' ? 'on' : ''} onClick={() => setMeal('diner')}>Dîner</button>
+              <button className={meal === 'gouter' ? 'on' : ''} onClick={() => setMeal('gouter')}>Goûter</button>
             </div>
 
             <div className="grid2">

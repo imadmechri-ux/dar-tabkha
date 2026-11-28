@@ -224,3 +224,72 @@ export const EXTRA_DISHES: Dish[] = [
     diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: [], reheatable: true,
   }),
 ];
+
+// ───────────── Petit-déjeuner, goûter et plats tunisiens supplémentaires ─────────────
+export const EXTRA_DISHES_2: Dish[] = [
+  dish({
+    id: 'lben-pain-huile', name: 'Lben, pain et huile d’olive', cuisine: 'tunisien', mealTypes: ['petit-dejeuner'], timeMinutes: 5, spice: 0,
+    steps: ['Verser le lben (ou yaourt nature délayé d’un peu d’eau) dans un bol.', 'Tremper ou tartiner le pain avec l’huile d’olive et le sel.', 'Ajouter les olives et servir.'],
+    ingredients: [
+      { ingredient: 'yaourt', qty: 200, unit: 'g' }, { ingredient: 'pain', qty: 60, unit: 'g' },
+      { ingredient: 'huile-olive', qty: 1, unit: 'cs' }, { ingredient: 'olive', qty: 4, unit: 'piece' },
+    ],
+    nutrition: { kcal: 380, protein: 14, carbs: 46, fat: 14 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'hergma-oeufs', name: 'Hergma, œufs à la tomate et au piment', cuisine: 'tunisien', mealTypes: ['petit-dejeuner', 'dejeuner', 'diner'], timeMinutes: 20, spice: 2,
+    steps: ['Faire revenir oignon et ail dans l’huile.', 'Ajouter tomate, piment et cumin, cuire 10 minutes.', 'Casser les œufs dans la sauce et couvrir jusqu’à prise.'],
+    ingredients: [
+      { ingredient: 'oeuf', qty: 2, unit: 'piece' }, { ingredient: 'tomate', qty: 150, unit: 'g' },
+      { ingredient: 'oignon', qty: 0.5, unit: 'piece' }, { ingredient: 'ail', qty: 1, unit: 'piece' },
+      { ingredient: 'piment', qty: 0.5, unit: 'piece' }, { ingredient: 'cumin', qty: 0.5, unit: 'cc' },
+      { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 340, protein: 17, carbs: 16, fat: 22 },
+    diet: ['vegetarien', 'sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['recuperation'],
+  }),
+  dish({
+    id: 'tartine-miel-huile', name: 'Tartine à l’huile d’olive et au miel', cuisine: 'tunisien', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 5, spice: 0,
+    steps: ['Griller légèrement le pain.', 'Arroser d’huile d’olive et d’une pincée de sel.', 'Ajouter le miel et les amandes concassées.'],
+    ingredients: [
+      { ingredient: 'pain', qty: 60, unit: 'g' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+      { ingredient: 'miel', qty: 1, unit: 'cc' }, { ingredient: 'amande', qty: 10, unit: 'g', optional: true },
+    ],
+    nutrition: { kcal: 320, protein: 6, carbs: 42, fat: 14 },
+    diet: ['vegetarien', 'vegan', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'makroud', name: 'Makroud aux dattes', cuisine: 'tunisien', mealTypes: ['gouter'], timeMinutes: 60, spice: 0,
+    steps: ['Pétrir la semoule avec l’huile et un peu d’eau.', 'Garnir de pâte de dattes, former des losanges.', 'Frire, puis tremper dans le miel parfumé à la cannelle.'],
+    ingredients: [
+      { ingredient: 'semoule', qty: 60, unit: 'g' }, { ingredient: 'datte', qty: 40, unit: 'g' },
+      { ingredient: 'huile-olive', qty: 1, unit: 'cs' }, { ingredient: 'miel', qty: 1, unit: 'cs' },
+      { ingredient: 'cannelle', qty: 0.5, unit: 'cc' },
+    ],
+    nutrition: { kcal: 380, protein: 4, carbs: 62, fat: 14 },
+    diet: ['vegetarien', 'vegan', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'sfenj', name: 'Sfenj, beignets tunisiens', cuisine: 'tunisien', mealTypes: ['gouter'], timeMinutes: 60, spice: 0,
+    steps: ['Mélanger farine, levure et eau tiède en pâte souple.', 'Laisser lever 40 minutes.', 'Frire des boules aplaties, puis tremper dans le miel.'],
+    ingredients: [
+      { ingredient: 'farine', qty: 60, unit: 'g' }, { ingredient: 'levure', qty: 0.5, unit: 'cc' },
+      { ingredient: 'huile-olive', qty: 2, unit: 'cs' }, { ingredient: 'miel', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 360, protein: 6, carbs: 52, fat: 14 },
+    diet: ['vegetarien', 'vegan', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'malfouf-chou', name: 'Malfouf, chou farci à la viande', cuisine: 'tunisien', mealTypes: ['dejeuner', 'diner'], timeMinutes: 70, spice: 1,
+    steps: ['Cuire les feuilles de chou à l’eau bouillante.', 'Mélanger viande hachée, riz ou semoule, oignon et épices.', 'Rouler les feuilles farcies et mijoter dans la sauce tomate.'],
+    ingredients: [
+      { ingredient: 'chou', qty: 150, unit: 'g' }, { ingredient: 'boeuf', qty: 100, unit: 'g' },
+      { ingredient: 'riz', qty: 30, unit: 'g' }, { ingredient: 'oignon', qty: 0.5, unit: 'piece' },
+      { ingredient: 'tomate', qty: 150, unit: 'g' }, { ingredient: 'concentre-tomate', qty: 1, unit: 'cs' },
+      { ingredient: 'cumin', qty: 0.5, unit: 'cc' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 520, protein: 32, carbs: 48, fat: 20 },
+    diet: ['sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['post-effort'], reheatable: true,
+  }),
+];

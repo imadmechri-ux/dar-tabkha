@@ -25,3 +25,17 @@ describe('recettes détaillées', () => {
     }
   });
 });
+
+describe('repas par moment de la journée', () => {
+  it('il existe des plats de petit-déjeuner et de goûter', () => {
+    expect(DISHES.filter((d) => d.mealTypes.includes('petit-dejeuner')).length).toBeGreaterThanOrEqual(3);
+    expect(DISHES.filter((d) => d.mealTypes.includes('gouter')).length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('chaque plat a au moins un moment de repas', () => {
+    for (const dish of DISHES) {
+      expect(dish.mealTypes.length, dish.id).toBeGreaterThan(0);
+    }
+  });
+});
+

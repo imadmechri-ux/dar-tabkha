@@ -277,4 +277,97 @@ export const RECIPES_EXTRA: Record<string, RecipeDetail> = {
     serve: 'Chaude, avec une salade verte.',
     storage: 'Se garde 1 jour au frais. Se réchauffe au four 5 minutes pour retrouver son croustillant.',
   },
+
+  'lben-pain-huile': {
+    intro: 'Le petit-déjeuner tunisien de base : du lben (une boisson lactée acidulée) ou du yaourt nature, du pain, un filet d’huile d’olive et des olives. Simple, rassasiant et très local.',
+    equipment: ['Un bol', 'Une cuillère', 'Un petit couteau'],
+    prepMinutes: 3, cookMinutes: 0,
+    steps: [
+      { title: 'Préparer le lben', text: 'Versez le lben ou le yaourt nature dans un bol. Si le yaourt est épais, délayez-le avec deux cuillères d’eau pour obtenir une texture de boisson.', minutes: 1 },
+      { title: 'Préparer le pain', text: 'Coupez le pain (60 g) en tranches ou en morceaux. Si le pain est frais, passez-le 2 minutes au four pour le raffermir.', minutes: 2 },
+      { title: 'Huile et sel', text: 'Versez l’huile d’olive dans une petite assiette, salez légèrement, et trempez-y le pain.', minutes: 1 },
+      { title: 'Servir', text: 'Disposez les olives à côté, et servez le lben froid.', minutes: 1 },
+    ],
+    tips: ['Le pain tunisien (khobz) est idéal, mais une baguette convient.', 'Pour une version plus douce, ajoutez une pincée de sucre au lben.', 'Choisissez une huile d’olive extra vierge : c’est elle qui donne le goût.'],
+    serve: 'Avec du thé à la menthe ou un café.',
+    storage: 'Le lben se garde 2 jours au frais. Le pain se prépare au moment de manger.',
+  },
+
+  'hergma-oeufs': {
+    intro: 'La hergma est un plat tunisien rapide : œufs pochés dans une sauce tomate, oignon, ail et piment. Elle se mange au petit-déjeuner, au déjeuner ou au dîner.',
+    equipment: ['Une poêle avec couvercle', 'Un couteau'],
+    prepMinutes: 5, cookMinutes: 15,
+    steps: [
+      { title: 'Faire revenir', text: 'Faites revenir l’oignon émincé et l’ail écrasé dans l’huile d’olive, 4 minutes à feu doux.', minutes: 4 },
+      { title: 'Préparer la sauce', text: 'Ajoutez la tomate en dés, le piment haché et le cumin. Laissez mijoter 10 minutes, jusqu’à ce que la sauce épaississe.', minutes: 10 },
+      { title: 'Pocher les œufs', text: 'Faites deux creux dans la sauce, cassez-y les œufs, couvrez et laissez cuire 4 à 5 minutes.', minutes: 5 },
+      { title: 'Servir', text: 'Salez, parsemez de persil si vous en avez, et servez dans la poêle.', minutes: 1 },
+    ],
+    tips: ['Le piment peut être remplacé par de la harissa, en petite quantité.', 'Ne mélangez pas les œufs à la sauce : ils doivent rester entiers.', 'Ce plat est très proche de la chakchouka ; la hergma est souvent plus relevée.'],
+    serve: 'Avec du pain tunisien pour saucer.',
+    storage: 'La sauce se garde 2 jours. Les œufs se font au moment de servir.',
+  },
+
+  'tartine-miel-huile': {
+    intro: 'Une tartine simple et sucrée-salée : pain grillé, huile d’olive, miel et amandes. Un goûter ou un petit-déjeuner rapide, qui apporte des glucides et des bons lipides.',
+    equipment: ['Un grille-pain ou une poêle', 'Un petit couteau'],
+    prepMinutes: 2, cookMinutes: 2,
+    steps: [
+      { title: 'Griller le pain', text: 'Faites griller le pain (60 g) jusqu’à ce qu’il soit doré sur les deux faces.', minutes: 2 },
+      { title: 'Huiler', text: 'Arrosez le pain chaud d’huile d’olive et d’une pincée de sel.', minutes: 1 },
+      { title: 'Miel et amandes', text: 'Étalez le miel, puis parsemez d’amandes concassées si vous en utilisez.', minutes: 1 },
+      { title: 'Servir tiède', text: 'Coupez la tartine en deux et servez tout de suite, tant que le pain est encore chaud.', minutes: 1 },
+    ],
+    tips: ['Versez l’huile sur le pain chaud : elle pénètre mieux.', 'Un pain au levain donne une meilleure tenue.', 'Vous pouvez ajouter des dattes hachées pour un goût plus riche.'],
+    serve: 'Avec un verre de lait ou un thé.',
+    storage: 'Se mange immédiatement.',
+  },
+
+  makroud: {
+    intro: 'Le makroud est une pâtisserie tunisienne à base de semoule et de pâte de dattes, frite puis trempée dans du miel. C’est un gâteau de fête, aussi apprécié au goûter.',
+    equipment: ['Un saladier', 'Une poêle profonde', 'Une écumoire', 'Un couteau', 'Un plat pour tremper'],
+    prepMinutes: 30, cookMinutes: 20,
+    steps: [
+      { title: 'Pétrir la semoule', text: 'Mélangez la semoule (60 g) avec l’huile d’olive et une pincée de sel. Ajoutez un peu d’eau tiède, petit à petit, jusqu’à obtenir une pâte souple. Laissez reposer 20 minutes.', minutes: 20 },
+      { title: 'Préparer la farce', text: 'Hachez finement les dattes (40 g), dénoyautées, avec une cuillère d’eau pour obtenir une pâte.', minutes: 3 },
+      { title: 'Garnir', text: 'Étalez la pâte de semoule en rectangle fin, déposez la farce au centre en un boudin, et refermez la pâte autour. Coupez en losanges.', minutes: 5 },
+      { title: 'Frire', text: 'Faites frire les losanges dans l’huile chaude à feu moyen, 3 à 4 minutes par face, jusqu’à ce qu’ils soient dorés.', minutes: 8 },
+      { title: 'Tremper dans le miel', text: 'Faites chauffer le miel (1 cuillère à soupe) avec la cannelle et un peu d’eau. Trempez les makroud chauds 30 secondes, puis égouttez.', minutes: 3 },
+    ],
+    tips: ['Le makroud se fait en grande quantité pour une fête : il se garde plusieurs jours.', 'L’huile doit être bien chaude, sinon le makroud absorbe trop de gras.', 'Le miel doit être tiède, pas bouillant, pour bien enrober.'],
+    serve: 'Avec du thé à la menthe.',
+    storage: 'Se garde 5 jours dans une boîte fermée, à température ambiante.',
+  },
+
+  sfenj: {
+    intro: 'Le sfenj est un beignet tunisien, moelleux à l’intérieur et croustillant dehors, trempé dans le miel. On le mange chaud, au goûter ou au petit-déjeuner.',
+    equipment: ['Un saladier', 'Une poêle profonde', 'Une écumoire', 'Un papier absorbant'],
+    prepMinutes: 15, cookMinutes: 15,
+    steps: [
+      { title: 'Préparer la pâte', text: 'Mélangez la farine (60 g) avec la levure et une pincée de sel. Ajoutez de l’eau tiède petit à petit pour obtenir une pâte souple et collante.', minutes: 5 },
+      { title: 'Faire lever', text: 'Couvrez et laissez lever 40 minutes, jusqu’à ce que la pâte double de volume.', minutes: 40 },
+      { title: 'Former', text: 'Huilez vos mains, prenez une petite boule de pâte et aplatissez-la au centre, en la laissant tomber un peu. Elle doit former un anneau.', minutes: 4 },
+      { title: 'Frire', text: 'Plongez les sfenj dans l’huile chaude, 2 minutes par face, jusqu’à ce qu’ils soient bien dorés.', minutes: 5 },
+      { title: 'Tremper', text: 'Égouttez sur du papier absorbant, puis trempez-les dans le miel tiède.', minutes: 2 },
+    ],
+    tips: ['La pâte doit être très souple : c’est ce qui donne le moelleux.', 'Ne retournez pas trop souvent : le sfenj doit gonfler.', 'Les sfenj se mangent le jour même, sinon ils deviennent durs.'],
+    serve: 'Chauds, avec du miel et un thé.',
+    storage: 'Se mange le jour même.',
+  },
+
+  'malfouf-chou': {
+    intro: 'Le malfouf est un plat tunisien de chou farci : des feuilles de chou roulées autour d’une farce à la viande et au riz, mijotées dans une sauce tomate. C’est un plat de famille, qui se prépare à l’avance.',
+    equipment: ['Une grande casserole', 'Une passoire', 'Un bol', 'Une cocotte pour la cuisson'],
+    prepMinutes: 30, cookMinutes: 50,
+    steps: [
+      { title: 'Blanchir le chou', text: 'Retirez les grandes feuilles du chou (150 g) et plongez-les 3 minutes dans l’eau bouillante, pour qu’elles deviennent souples. Égouttez.', minutes: 5 },
+      { title: 'Préparer la farce', text: 'Mélangez la viande hachée (100 g), le riz cru (30 g), l’oignon haché finement, le cumin, du sel et du poivre.', minutes: 5 },
+      { title: 'Rouler', text: 'Posez une cuillère de farce sur chaque feuille, repliez les côtés et roulez-la fermement. Mettez les rouleaux serrés dans la cocotte.', minutes: 15 },
+      { title: 'Préparer la sauce', text: 'Faites revenir l’oignon, ajoutez le concentré de tomate et la tomate en dés. Versez un peu d’eau, puis nappez les rouleaux de sauce.', minutes: 10 },
+      { title: 'Mijoter', text: 'Couvrez et laissez mijoter à feu doux 40 minutes, jusqu’à ce que le riz et la viande soient cuits.', minutes: 40 },
+    ],
+    tips: ['Serrez bien les rouleaux, sinon ils se défont à la cuisson.', 'Ajoutez un peu de bouillon à la sauce pour plus de goût.', 'Le malfouf est meilleur le lendemain.'],
+    serve: 'Avec du pain tunisien ou de la semoule.',
+    storage: 'Se garde 3 jours au frais. Se réchauffe à feu doux avec un peu d’eau.',
+  },
 };

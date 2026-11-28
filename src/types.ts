@@ -1,5 +1,5 @@
 export type Cuisine = 'tunisien' | 'italien' | 'fusion';
-export type MealType = 'dejeuner' | 'diner';
+export type MealType = 'petit-dejeuner' | 'dejeuner' | 'diner' | 'gouter';
 export type DietTag =
   | 'vegetarien'
   | 'vegan'

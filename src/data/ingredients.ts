@@ -69,6 +69,8 @@ export const INGREDIENTS: IngredientDef[] = [
   { id: 'yaourt', name: 'Yaourt nature', synonyms: ['yogurt', 'yaourt', 'yoghourt', 'laben', 'lben'], category: 'laitier', containsAnimal: true, containsLactose: true, allergens: ['lait'], priceHint: 8 },
   { id: 'anchois', name: 'Anchois', synonyms: ['acciughe', 'anchois', 'anchovy'], category: 'poisson', containsAnimal: true, allergens: ['poisson'], priceHint: 40 },
   { id: 'levure', name: 'Levure boulangère', synonyms: ['lievito', 'khmira', 'levure', 'yeast'], category: 'autre' },
+  { id: 'datte', name: 'Dattes', synonyms: ['tmar', 'dattes', 'date', 'dates'], category: 'fruit' },
+  { id: 'chou', name: 'Chou vert', synonyms: ['cavolo', 'kromb', 'chou', 'cabbage'], category: 'legume' },
 ];
 
 export const INGREDIENT_BY_ID: Record<string, IngredientDef> = Object.fromEntries(

@@ -1,4 +1,4 @@
-import { EXTRA_DISHES } from './dishes-extra';
+import { EXTRA_DISHES, EXTRA_DISHES_2 } from './dishes-extra';
 import type { Dish, DietTag, SportRole } from '../types';
 
 // Base de plats du MVP. Quantités par personne adulte.
@@ -97,7 +97,7 @@ const BASE_DISHES: Dish[] = [
     diet: ['sans-lactose', 'sans-porc', 'halal'], sportRoles: ['post-effort'], reheatable: true,
   }),
   dish({
-    id: 'bsisa', name: 'Bsissa (farine grillée au cumin)', cuisine: 'tunisien', mealTypes: ['dejeuner'], timeMinutes: 15, spice: 0,
+    id: 'bsisa', name: 'Bsissa (farine grillée au cumin)', cuisine: 'tunisien', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 15, spice: 0,
     steps: ['Mélanger la farine grillée avec le cumin, le sel et l’huile.', 'Ajouter un peu d’eau ou de lait pour former une pâte friable.', 'Servir en collation ou en petit-déjeuner.'],
     ingredients: [
       { ingredient: 'farine', qty: 60, unit: 'g' }, { ingredient: 'cumin', qty: 1, unit: 'cc' },
@@ -311,7 +311,7 @@ const BASE_DISHES: Dish[] = [
   }),
 ];
 
-export const DISHES: Dish[] = [...BASE_DISHES, ...EXTRA_DISHES];
+export const DISHES: Dish[] = [...BASE_DISHES, ...EXTRA_DISHES, ...EXTRA_DISHES_2];
 
 export const DISH_BY_ID: Record<string, Dish> = Object.fromEntries(DISHES.map((d) => [d.id, d]));
 
