@@ -1,4 +1,4 @@
-import { EXTRA_DISHES, EXTRA_DISHES_2 } from './dishes-extra';
+import { EXTRA_DISHES, EXTRA_DISHES_2, EXTRA_DISHES_3 } from './dishes-extra';
 import type { Dish, DietTag, SportRole } from '../types';
 
 // Base de plats du MVP. Quantités par personne adulte.
@@ -311,7 +311,7 @@ const BASE_DISHES: Dish[] = [
   }),
 ];
 
-export const DISHES: Dish[] = [...BASE_DISHES, ...EXTRA_DISHES, ...EXTRA_DISHES_2];
+export const DISHES: Dish[] = [...BASE_DISHES, ...EXTRA_DISHES, ...EXTRA_DISHES_2, ...EXTRA_DISHES_3];
 
 export const DISH_BY_ID: Record<string, Dish> = Object.fromEntries(DISHES.map((d) => [d.id, d]));
 

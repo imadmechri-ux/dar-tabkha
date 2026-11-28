@@ -1,4 +1,4 @@
-export type Cuisine = 'tunisien' | 'italien' | 'fusion';
+export type Cuisine = 'tunisien' | 'italien' | 'fusion' | 'international';
 export type MealType = 'petit-dejeuner' | 'dejeuner' | 'diner' | 'gouter';
 export type DietTag =
   | 'vegetarien'

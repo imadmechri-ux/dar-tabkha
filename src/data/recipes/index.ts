@@ -1,3 +1,4 @@
+import { RECIPES_BREAKFAST } from './breakfast';
 import { RECIPES_EXTRA } from './extra';
 import { RECIPES_FUSION_SPORT } from './fusion-sport';
 import { RECIPES_ITALIEN } from './italien';
@@ -12,4 +13,5 @@ export const RECIPES: Record<string, RecipeDetail> = {
   ...RECIPES_ITALIEN,
   ...RECIPES_FUSION_SPORT,
   ...RECIPES_EXTRA,
+  ...RECIPES_BREAKFAST,
 };

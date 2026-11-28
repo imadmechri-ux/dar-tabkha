@@ -293,3 +293,82 @@ export const EXTRA_DISHES_2: Dish[] = [
     diet: ['sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['post-effort'], reheatable: true,
   }),
 ];
+
+// ───────────── Petits-déjeuners d'autres cuisines ─────────────
+export const EXTRA_DISHES_3: Dish[] = [
+  dish({
+    id: 'pancakes-banane-avoine', name: 'Pancakes banane et avoine', cuisine: 'international', mealTypes: ['petit-dejeuner'], timeMinutes: 20, spice: 0,
+    steps: ['Écraser la banane, mélanger avec l’œuf et le lait.', 'Ajouter les flocons d’avoine mixés et la cannelle.', 'Cuire de petites galettes dans une poêle huilée.'],
+    ingredients: [
+      { ingredient: 'banane', qty: 1, unit: 'piece' }, { ingredient: 'oeuf', qty: 1, unit: 'piece' },
+      { ingredient: 'flocons-avoine', qty: 50, unit: 'g' }, { ingredient: 'lait', qty: 100, unit: 'ml' },
+      { ingredient: 'cannelle', qty: 0.5, unit: 'cc' }, { ingredient: 'huile-olive', qty: 1, unit: 'cc' },
+    ],
+    nutrition: { kcal: 420, protein: 18, carbs: 60, fat: 12 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'pain-perdu-cannelle', name: 'Pain perdu à la cannelle', cuisine: 'international', mealTypes: ['petit-dejeuner'], timeMinutes: 15, spice: 0,
+    steps: ['Battre l’œuf avec le lait et la cannelle.', 'Tremper les tranches de pain 20 secondes de chaque côté.', 'Dorer au beurre et servir avec du miel.'],
+    ingredients: [
+      { ingredient: 'pain', qty: 60, unit: 'g' }, { ingredient: 'oeuf', qty: 1, unit: 'piece' },
+      { ingredient: 'lait', qty: 60, unit: 'ml' }, { ingredient: 'cannelle', qty: 0.5, unit: 'cc' },
+      { ingredient: 'beurre', qty: 5, unit: 'g' }, { ingredient: 'miel', qty: 1, unit: 'cc' },
+    ],
+    nutrition: { kcal: 430, protein: 16, carbs: 52, fat: 18 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: [],
+  }),
+  dish({
+    id: 'avocat-toast-oeuf', name: 'Toast avocat et œuf', cuisine: 'international', mealTypes: ['petit-dejeuner'], timeMinutes: 10, spice: 1,
+    steps: ['Griller le pain.', 'Écraser l’avocat avec le citron, le sel et le poivre.', 'Étaler sur le pain, poser un œuf poché ou au plat.'],
+    ingredients: [
+      { ingredient: 'pain', qty: 60, unit: 'g' }, { ingredient: 'avocat', qty: 0.5, unit: 'piece' },
+      { ingredient: 'oeuf', qty: 1, unit: 'piece' }, { ingredient: 'citron', qty: 0.25, unit: 'piece' },
+      { ingredient: 'piment', qty: 0.1, unit: 'piece', optional: true },
+    ],
+    nutrition: { kcal: 400, protein: 16, carbs: 34, fat: 22 },
+    diet: ['vegetarien', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'chia-pudding', name: 'Pudding de chia', cuisine: 'international', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 5, spice: 0,
+    steps: ['Mélanger les graines de chia avec le lait et le miel.', 'Laisser gonfler au frais au moins 2 heures, idéalement toute une nuit.', 'Garnir de banane en rondelles.'],
+    ingredients: [
+      { ingredient: 'chia', qty: 20, unit: 'g' }, { ingredient: 'lait', qty: 150, unit: 'ml' },
+      { ingredient: 'miel', qty: 1, unit: 'cc' }, { ingredient: 'banane', qty: 0.5, unit: 'piece' },
+    ],
+    nutrition: { kcal: 320, protein: 12, carbs: 36, fat: 14 },
+    diet: ['vegetarien', 'sans-gluten', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'menemen', name: 'Menemen aux œufs', cuisine: 'international', mealTypes: ['petit-dejeuner', 'dejeuner'], timeMinutes: 15, spice: 1,
+    steps: ['Faire revenir oignon et poivron dans l’huile.', 'Ajouter tomates et piment, cuire 5 minutes.', 'Battre les œufs dans la sauce, remuer doucement jusqu’à prise.'],
+    ingredients: [
+      { ingredient: 'oeuf', qty: 2, unit: 'piece' }, { ingredient: 'tomate', qty: 150, unit: 'g' },
+      { ingredient: 'poivron', qty: 0.5, unit: 'piece' }, { ingredient: 'oignon', qty: 0.25, unit: 'piece' },
+      { ingredient: 'piment', qty: 0.25, unit: 'piece' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+    ],
+    nutrition: { kcal: 330, protein: 17, carbs: 14, fat: 22 },
+    diet: ['vegetarien', 'sans-gluten', 'sans-lactose', 'sans-porc', 'halal'], sportRoles: ['recuperation'],
+  }),
+  dish({
+    id: 'msemen-simple', name: 'Msemen (crêpe feuilletée)', cuisine: 'international', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 45, spice: 0,
+    steps: ['Pétrir la farine avec l’eau tiède, le sel et l’huile en pâte souple.', 'Laisser reposer 20 minutes.', 'Étaler, plier en carré avec du beurre fondu, et cuire à la poêle.'],
+    ingredients: [
+      { ingredient: 'farine', qty: 100, unit: 'g' }, { ingredient: 'huile-olive', qty: 1, unit: 'cs' },
+      { ingredient: 'beurre', qty: 10, unit: 'g' }, { ingredient: 'sel', qty: 1, unit: 'pincee' },
+    ],
+    nutrition: { kcal: 380, protein: 8, carbs: 54, fat: 14 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+  dish({
+    id: 'bowl-yaourt-fruits', name: 'Bowl yaourt, fruits et amandes', cuisine: 'international', mealTypes: ['petit-dejeuner', 'gouter'], timeMinutes: 5, spice: 0,
+    steps: ['Verser le yaourt dans un bol.', 'Ajouter l’avoine, la banane et le miel.', 'Parsemer d’amandes concassées.'],
+    ingredients: [
+      { ingredient: 'yaourt', qty: 150, unit: 'g' }, { ingredient: 'flocons-avoine', qty: 30, unit: 'g' },
+      { ingredient: 'banane', qty: 0.5, unit: 'piece' }, { ingredient: 'amande', qty: 10, unit: 'g' },
+      { ingredient: 'miel', qty: 1, unit: 'cc' },
+    ],
+    nutrition: { kcal: 370, protein: 18, carbs: 52, fat: 10 },
+    diet: ['vegetarien', 'sans-porc', 'halal'], sportRoles: ['pre-effort'],
+  }),
+];

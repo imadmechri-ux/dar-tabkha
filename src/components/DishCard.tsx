@@ -6,7 +6,7 @@ import { RECIPES } from '../data/recipes';
 import { PHOTOS } from '../data/photos';
 
 const UNIT_LABELS: Record<string, string> = { g: 'g', ml: 'ml', piece: '', cs: 'c. à soupe', cc: 'c. à café', pincee: 'pincée' };
-const CUISINE_LABELS: Record<string, string> = { tunisien: 'Tunisien', italien: 'Italien', fusion: 'Fusion tuniso-italienne' };
+const CUISINE_LABELS: Record<string, string> = { tunisien: 'Tunisien', italien: 'Italien', fusion: 'Fusion tuniso-italienne', international: 'Autre cuisine' };
 
 interface Props {
   suggestion: Suggestion;

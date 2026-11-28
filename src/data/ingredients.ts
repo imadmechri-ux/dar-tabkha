@@ -71,6 +71,7 @@ export const INGREDIENTS: IngredientDef[] = [
   { id: 'levure', name: 'Levure boulangère', synonyms: ['lievito', 'khmira', 'levure', 'yeast'], category: 'autre' },
   { id: 'datte', name: 'Dattes', synonyms: ['tmar', 'dattes', 'date', 'dates'], category: 'fruit' },
   { id: 'chou', name: 'Chou vert', synonyms: ['cavolo', 'kromb', 'chou', 'cabbage'], category: 'legume' },
+  { id: 'chia', name: 'Graines de chia', synonyms: ['chia', 'semi di chia'], category: 'autre' },
 ];
 
 export const INGREDIENT_BY_ID: Record<string, IngredientDef> = Object.fromEntries(
