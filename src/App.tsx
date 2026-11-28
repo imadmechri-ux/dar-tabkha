@@ -17,6 +17,8 @@ export default function App() {
   const [eatingIds, setEatingIds] = useState<string[] | null>(null);
   const [tab, setTab] = useState<'repas' | 'frigo' | 'foyer'>('repas');
   const [showSeasonal, setShowSeasonal] = useState(false);
+  const [page, setPage] = useState(0);
+  const PAGE_SIZE = 6;
 
   useEffect(() => saveState(state), [state]);
 
@@ -26,7 +28,8 @@ export default function App() {
     [state.household.profiles, eatingIds],
   );
 
-  const result = useMemo(
+  // Tous les plats classés pour ce repas ; on affiche une page à la fois.
+  const ranked = useMemo(
     () =>
       suggestDishes({
         meal,
@@ -34,10 +37,22 @@ export default function App() {
         pantry,
         profiles: eating.length ? eating : state.household.profiles,
         maxTimeMinutes: maxTime === '' ? undefined : maxTime,
-        limit: 6,
+        limit: 200,
       }),
     [meal, guests, pantry, eating, maxTime, state.household.profiles],
   );
+  const pageCount = Math.max(1, Math.ceil(ranked.suggestions.length / PAGE_SIZE));
+  const currentPage = Math.min(page, pageCount - 1);
+  const result = useMemo(
+    () => ({
+      ...ranked,
+      suggestions: ranked.suggestions.slice(currentPage * PAGE_SIZE, currentPage * PAGE_SIZE + PAGE_SIZE),
+    }),
+    [ranked, currentPage],
+  );
+
+  // Revenir à la première page dès que le contexte change.
+  useEffect(() => setPage(0), [meal, guests, pantry, eating, maxTime]);
 
   const setPantry = (next: Set<string>) => setState({ ...state, pantry: [...next] });
 
@@ -154,6 +169,18 @@ export default function App() {
           {result.suggestions.map((s) => (
             <DishCard key={s.dish.id} suggestion={s} guests={guests} pantry={pantry} />
           ))}
+
+          {pageCount > 1 && (
+            <div className="pager">
+              <button className="ghost" onClick={() => setPage((currentPage - 1 + pageCount) % pageCount)}>
+                ← Précédentes
+              </button>
+              <span className="muted small">
+                Page {currentPage + 1} / {pageCount}
+              </span>
+              <button onClick={() => setPage((currentPage + 1) % pageCount)}>Autres propositions →</button>
+            </div>
+          )}
 
           {result.excluded.length > 0 && (
             <details className="card">
