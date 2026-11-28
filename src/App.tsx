@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { DishCard } from './components/DishCard';
 import { PantryPanel } from './components/PantryPanel';
 import { ProfileManager } from './components/ProfileManager';
+import { BackupPanel } from './components/BackupPanel';
 import { suggestDishes } from './engine/suggest';
 import type { Guests } from './engine/scale';
 import { loadState, saveState, type AppState } from './profiles/store';
@@ -55,10 +56,13 @@ export default function App() {
       </nav>
 
       {tab === 'foyer' && (
-        <ProfileManager
-          profiles={state.household.profiles}
-          onChange={(profiles) => setState({ ...state, household: { ...state.household, profiles } })}
-        />
+        <>
+          <ProfileManager
+            profiles={state.household.profiles}
+            onChange={(profiles) => setState({ ...state, household: { ...state.household, profiles } })}
+          />
+          <BackupPanel state={state} onRestore={(next) => setState(next)} />
+        </>
       )}
 
       {tab === 'frigo' && <PantryPanel pantry={pantry} onChange={setPantry} />}
